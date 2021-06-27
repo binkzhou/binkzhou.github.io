@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>IO流 | 我的笔记</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.52bb2005.css" as="style"><link rel="preload" href="/docs/assets/js/app.7890f91e.js" as="script"><link rel="preload" href="/docs/assets/js/2.a8bc3a53.js" as="script"><link rel="preload" href="/docs/assets/js/62.9a22eb9a.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.6d1a44dc.js"><link rel="prefetch" href="/docs/assets/js/11.88b33277.js"><link rel="prefetch" href="/docs/assets/js/12.d888dad3.js"><link rel="prefetch" href="/docs/assets/js/13.f4b320f4.js"><link rel="prefetch" href="/docs/assets/js/14.affc25d2.js"><link rel="prefetch" href="/docs/assets/js/15.f3f21810.js"><link rel="prefetch" href="/docs/assets/js/16.20cfbcd3.js"><link rel="prefetch" href="/docs/assets/js/17.8fa60e8f.js"><link rel="prefetch" href="/docs/assets/js/18.220db854.js"><link rel="prefetch" href="/docs/assets/js/19.c6db72e7.js"><link rel="prefetch" href="/docs/assets/js/20.121df49a.js"><link rel="prefetch" href="/docs/assets/js/21.b9b44369.js"><link rel="prefetch" href="/docs/assets/js/22.a7d81dee.js"><link rel="prefetch" href="/docs/assets/js/23.05a4db07.js"><link rel="prefetch" href="/docs/assets/js/24.0e35ee22.js"><link rel="prefetch" href="/docs/assets/js/25.9c3e07da.js"><link rel="prefetch" href="/docs/assets/js/26.6dcfef0f.js"><link rel="prefetch" href="/docs/assets/js/27.6ad8c329.js"><link rel="prefetch" href="/docs/assets/js/28.6b5d3991.js"><link rel="prefetch" href="/docs/assets/js/29.407c6de9.js"><link rel="prefetch" href="/docs/assets/js/3.3ddcfe9a.js"><link rel="prefetch" href="/docs/assets/js/30.34551e96.js"><link rel="prefetch" href="/docs/assets/js/31.47783344.js"><link rel="prefetch" href="/docs/assets/js/32.c6f4cea4.js"><link rel="prefetch" href="/docs/assets/js/33.03d5e501.js"><link rel="prefetch" href="/docs/assets/js/34.0ca4e267.js"><link rel="prefetch" href="/docs/assets/js/35.e999eeee.js"><link rel="prefetch" href="/docs/assets/js/36.544af633.js"><link rel="prefetch" href="/docs/assets/js/37.9e0cc013.js"><link rel="prefetch" href="/docs/assets/js/38.1c3df97c.js"><link rel="prefetch" href="/docs/assets/js/39.9ce8a5f7.js"><link rel="prefetch" href="/docs/assets/js/4.72d66176.js"><link rel="prefetch" href="/docs/assets/js/40.323e7e25.js"><link rel="prefetch" href="/docs/assets/js/41.9440b8ee.js"><link rel="prefetch" href="/docs/assets/js/42.959d789d.js"><link rel="prefetch" href="/docs/assets/js/43.1a427e6d.js"><link rel="prefetch" href="/docs/assets/js/44.9adaa5b6.js"><link rel="prefetch" href="/docs/assets/js/45.b70993ab.js"><link rel="prefetch" href="/docs/assets/js/46.bc570f17.js"><link rel="prefetch" href="/docs/assets/js/47.954dd27f.js"><link rel="prefetch" href="/docs/assets/js/48.72d2a29d.js"><link rel="prefetch" href="/docs/assets/js/49.7ddfd074.js"><link rel="prefetch" href="/docs/assets/js/5.5087e4f8.js"><link rel="prefetch" href="/docs/assets/js/50.2684a6e6.js"><link rel="prefetch" href="/docs/assets/js/51.00572c60.js"><link rel="prefetch" href="/docs/assets/js/52.5a70be73.js"><link rel="prefetch" href="/docs/assets/js/53.9f6156b6.js"><link rel="prefetch" href="/docs/assets/js/54.9efed889.js"><link rel="prefetch" href="/docs/assets/js/55.78300585.js"><link rel="prefetch" href="/docs/assets/js/56.e33be804.js"><link rel="prefetch" href="/docs/assets/js/57.0c404d88.js"><link rel="prefetch" href="/docs/assets/js/58.2f99406b.js"><link rel="prefetch" href="/docs/assets/js/59.b7a3347e.js"><link rel="prefetch" href="/docs/assets/js/6.7a9273f7.js"><link rel="prefetch" href="/docs/assets/js/60.f14f3fe9.js"><link rel="prefetch" href="/docs/assets/js/61.f770fcc5.js"><link rel="prefetch" href="/docs/assets/js/63.94b2ea39.js"><link rel="prefetch" href="/docs/assets/js/64.e2bf811b.js"><link rel="prefetch" href="/docs/assets/js/65.74d494f9.js"><link rel="prefetch" href="/docs/assets/js/66.a375bb32.js"><link rel="prefetch" href="/docs/assets/js/67.3c201101.js"><link rel="prefetch" href="/docs/assets/js/68.f2c6c1f4.js"><link rel="prefetch" href="/docs/assets/js/69.268faa44.js"><link rel="prefetch" href="/docs/assets/js/7.1a3a696f.js"><link rel="prefetch" href="/docs/assets/js/70.6f4df6a6.js"><link rel="prefetch" href="/docs/assets/js/71.37964dc5.js"><link rel="prefetch" href="/docs/assets/js/72.eef27e2e.js"><link rel="prefetch" href="/docs/assets/js/73.d7a9dbd9.js"><link rel="prefetch" href="/docs/assets/js/74.f2040aa6.js"><link rel="prefetch" href="/docs/assets/js/75.9f939c37.js"><link rel="prefetch" href="/docs/assets/js/76.b1358302.js"><link rel="prefetch" href="/docs/assets/js/77.83a2c6b3.js"><link rel="prefetch" href="/docs/assets/js/78.34149b3d.js"><link rel="prefetch" href="/docs/assets/js/79.fde21713.js"><link rel="prefetch" href="/docs/assets/js/8.9fb3aa96.js"><link rel="prefetch" href="/docs/assets/js/80.6461e24e.js"><link rel="prefetch" href="/docs/assets/js/81.e6c53d45.js"><link rel="prefetch" href="/docs/assets/js/82.19506b41.js"><link rel="prefetch" href="/docs/assets/js/83.b39f337e.js"><link rel="prefetch" href="/docs/assets/js/84.6dae4be4.js"><link rel="prefetch" href="/docs/assets/js/85.862470ad.js"><link rel="prefetch" href="/docs/assets/js/86.6121868f.js"><link rel="prefetch" href="/docs/assets/js/87.7c0c10bf.js"><link rel="prefetch" href="/docs/assets/js/88.24fd0017.js"><link rel="prefetch" href="/docs/assets/js/9.24bd0981.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.52bb2005.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><!----> <span class="site-name">我的笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/docs/javascrip/" class="nav-link">
+  JavaScrip
+</a></li><li class="dropdown-item"><!----> <a href="/docs/typescrip/" class="nav-link">
+  TypeScrip
+</a></li><li class="dropdown-item"><!----> <a href="/docs/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/docs/hook/" class="nav-link">
+  Hook
+</a></li><li class="dropdown-item"><!----> <a href="/docs/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/docs/vue3/" class="nav-link">
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/docs/webpack/" class="nav-link">
+  webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/java/" class="nav-link router-link-active">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/docs/mysql/" class="nav-link">
+  Mysql
+</a></li><li class="dropdown-item"><!----> <a href="/docs/node/" class="nav-link">
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/docs/j2ee/" class="nav-link">
+  J2EE
+</a></li><li class="dropdown-item"><!----> <a href="/docs/ssm/" class="nav-link">
+  SSM
+</a></li></ul></div></div><div class="nav-item"><a href="/docs/efficiency/1.常用网站.html" class="nav-link">
+  随记
+</a></div><div class="nav-item"><a href="/docs/collection/1.立即执行函数.html" class="nav-link">
+  收藏
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/docs/javascrip/" class="nav-link">
+  JavaScrip
+</a></li><li class="dropdown-item"><!----> <a href="/docs/typescrip/" class="nav-link">
+  TypeScrip
+</a></li><li class="dropdown-item"><!----> <a href="/docs/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/docs/hook/" class="nav-link">
+  Hook
+</a></li><li class="dropdown-item"><!----> <a href="/docs/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/docs/vue3/" class="nav-link">
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/docs/webpack/" class="nav-link">
+  webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/java/" class="nav-link router-link-active">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/docs/mysql/" class="nav-link">
+  Mysql
+</a></li><li class="dropdown-item"><!----> <a href="/docs/node/" class="nav-link">
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/docs/j2ee/" class="nav-link">
+  J2EE
+</a></li><li class="dropdown-item"><!----> <a href="/docs/ssm/" class="nav-link">
+  SSM
+</a></li></ul></div></div><div class="nav-item"><a href="/docs/efficiency/1.常用网站.html" class="nav-link">
+  随记
+</a></div><div class="nav-item"><a href="/docs/collection/1.立即执行函数.html" class="nav-link">
+  收藏
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/docs/java/" aria-current="page" class="sidebar-link">常用API</a></li><li><a href="/docs/java/File类.html" class="sidebar-link">File类</a></li><li><a href="/docs/java/IO流.html" class="active sidebar-link">IO流</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/java/IO流.html#_4-1-字节输出流的所有类的超类" class="sidebar-link">4.1 字节输出流的所有类的超类</a></li><li class="sidebar-sub-header"><a href="/docs/java/IO流.html#_4-2-文件字节输出流" class="sidebar-link">4.2 文件字节输出流</a></li><li class="sidebar-sub-header"><a href="/docs/java/IO流.html#_4-3-写入一个字节" class="sidebar-link">4.3 写入一个字节</a></li><li class="sidebar-sub-header"><a href="/docs/java/IO流.html#_4-4-写入多个字节" class="sidebar-link">4.4 写入多个字节</a></li><li class="sidebar-sub-header"><a href="/docs/java/IO流.html#_4-3-字节流的续写和换行" class="sidebar-link">4.3 字节流的续写和换行</a></li><li class="sidebar-sub-header"><a href="/docs/java/IO流.html#_4-1-字节输入流的所有类的超类" class="sidebar-link">4.1 字节输入流的所有类的超类</a></li><li class="sidebar-sub-header"><a href="/docs/java/IO流.html#_4-2-一次读入一个字节" class="sidebar-link">4.2 一次读入一个字节</a></li><li class="sidebar-sub-header"><a href="/docs/java/IO流.html#_4-3-一次读入多个字节" class="sidebar-link">4.3 一次读入多个字节</a></li><li class="sidebar-sub-header"><a href="/docs/java/IO流.html#_4-4-文件的复制" class="sidebar-link">4.4 文件的复制</a></li><li class="sidebar-sub-header"><a href="/docs/java/IO流.html#_4-5-字节流存在问题" class="sidebar-link">4.5 字节流存在问题</a></li><li class="sidebar-sub-header"><a href="/docs/java/IO流.html#_6-1-字符输入流的所有类的超类" class="sidebar-link">6.1 字符输入流的所有类的超类</a></li><li class="sidebar-sub-header"><a href="/docs/java/IO流.html#_6-2-一次读入一个字符" class="sidebar-link">6.2 一次读入一个字符</a></li><li class="sidebar-sub-header"><a href="/docs/java/IO流.html#_6-3-一次读入多个字符" class="sidebar-link">6.3 一次读入多个字符</a></li><li class="sidebar-sub-header"><a href="/docs/java/IO流.html#_7-1-字符输出流的所有类的超类" class="sidebar-link">7.1 字符输出流的所有类的超类</a></li><li class="sidebar-sub-header"><a href="/docs/java/IO流.html#_7-1-一次写入单个字符" class="sidebar-link">7.1 一次写入单个字符</a></li><li class="sidebar-sub-header"><a href="/docs/java/IO流.html#_7-2-flush和close方法的区别" class="sidebar-link">7.2 flush和close方法的区别</a></li><li class="sidebar-sub-header"><a href="/docs/java/IO流.html#_7-3-一次写多个字符" class="sidebar-link">7.3 一次写多个字符</a></li><li class="sidebar-sub-header"><a href="/docs/java/IO流.html#_7-4-字符输出流的续写和换行" class="sidebar-link">7.4 字符输出流的续写和换行</a></li><li class="sidebar-sub-header"><a href="/docs/java/IO流.html#_7-5-try-catch处理流中的异常" class="sidebar-link">7.5 try catch处理流中的异常</a></li><li class="sidebar-sub-header"><a href="/docs/java/IO流.html#_8-1-properties-的存储和遍历" class="sidebar-link">8.1 properties 的存储和遍历</a></li><li class="sidebar-sub-header"><a href="/docs/java/IO流.html#_8-2-properties中的store方法" class="sidebar-link">8.2 properties中的store方法</a></li><li class="sidebar-sub-header"><a href="/docs/java/IO流.html#_8-3-properties中的load方法" class="sidebar-link">8.3 properties中的load方法</a></li><li class="sidebar-sub-header"><a href="/docs/java/IO流.html#_9-1-字节缓存流" class="sidebar-link">9.1 字节缓存流</a></li><li class="sidebar-sub-header"><a href="/docs/java/IO流.html#_9-2-字符缓冲流" class="sidebar-link">9.2 字符缓冲流</a></li></ul></li><li><a href="/docs/java/集合.html" class="sidebar-link">集合</a></li><li><a href="/docs/java/JDBC.html" class="sidebar-link">JDBC</a></li><li><a href="/docs/java/反射和注解.html" class="sidebar-link">反射和注解</a></li><li><a href="/docs/java/继承.html" class="sidebar-link">继承</a></li><li><a href="/docs/java/抽象类.html" class="sidebar-link">抽象类</a></li><li><a href="/docs/java/多态.html" class="sidebar-link">多态</a></li><li><a href="/docs/java/接口.html" class="sidebar-link">接口</a></li><li><a href="/docs/java/final关键字.html" class="sidebar-link">final关键字</a></li><li><a href="/docs/java/内部类.html" class="sidebar-link">内部类</a></li><li><a href="/docs/java/权限修饰符.html" class="sidebar-link">权限修饰符</a></li><li><a href="/docs/java/网络编程.html" class="sidebar-link">网络编程</a></li><li><a href="/docs/java/异常.html" class="sidebar-link">异常</a></li><li><a href="/docs/java/引用类型.html" class="sidebar-link">引用类型</a></li><li><a href="/docs/java/多线程.html" class="sidebar-link">多线程</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="四、字节输出流"><a href="#四、字节输出流" class="header-anchor">#</a> 四、字节输出流</h1> <h2 id="_4-1-字节输出流的所有类的超类"><a href="#_4-1-字节输出流的所有类的超类" class="header-anchor">#</a> 4.1 字节输出流的所有类的超类</h2> <p><strong>输出流共有的方法</strong></p> <table><thead><tr><th>Modifier and Type</th> <th>Method and Description</th></tr></thead> <tbody><tr><td><code>void</code></td> <td><code>close()</code>  关闭此输出流并释放与此流相关联的任何系统资源。</td></tr> <tr><td><code>void</code></td> <td><code>flush()</code>  刷新此输出流并强制任何缓冲的输出字节被写出。</td></tr> <tr><td><code>void</code></td> <td><code>write(byte[] b)</code>  将 <code>b.length</code>字节从指定的字节数组写入此输出流。</td></tr> <tr><td><code>void</code></td> <td><code>write(byte[] b, int off, int len)</code>  从指定的字节数组写入 <code>len</code>个字节，从偏移 <code>off</code>开始输出到此输出流。</td></tr> <tr><td><code>abstract void</code></td> <td><code>write(int b)</code>  将指定的字节写入此输出流。</td></tr></tbody></table> <p><strong>已知直接子类：</strong>
+ByteArrayOutputStream ， FileOutputStream ， FilterOutputStream ， ObjectOutputStream ， OutputStream ， PipedOutputStream</p> <h2 id="_4-2-文件字节输出流"><a href="#_4-2-文件字节输出流" class="header-anchor">#</a> 4.2 文件字节输出流</h2> <p><strong>构造方法摘要</strong></p> <table><thead><tr><th>Constructor and Description</th></tr></thead> <tbody><tr><td><code>FileOutputStream(File file)</code>  创建文件输出流以写入由指定的 <code>File</code>对象表示的文件。</td></tr> <tr><td><code>FileOutputStream(File file, boolean append)</code>  创建文件输出流以写入由指定的 <code>File</code>对象表示的文件。</td></tr> <tr><td><code>FileOutputStream(FileDescriptor fdObj)</code>  创建文件输出流以写入指定的文件描述符，表示与文件系统中实际文件的现有连接。</td></tr> <tr><td><code>FileOutputStream(String name)</code>  创建文件输出流以指定的名称写入文件。</td></tr> <tr><td><code>FileOutputStream(String name, boolean append)</code>  创建文件输出流以指定的名称写入文件。</td></tr></tbody></table> <h2 id="_4-3-写入一个字节"><a href="#_4-3-写入一个字节" class="header-anchor">#</a> 4.3 写入一个字节</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//字节流写入数据到文件</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo01</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.FileOutputStream(String name)</span>
+        <span class="token comment">// 创建文件输出流以指定的名称写入文件。</span>
+        <span class="token class-name">FileOutputStream</span> fos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span><span class="token string">&quot;src\\a.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.void---write(byte[] b)</span>
+        <span class="token comment">//将 b.length个字节从指定的字节数组写入此文件输出流。</span>
+        fos<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token number">97</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//void close()</span>
+        <span class="token comment">//关闭此文件输出流并释放与此流相关联的任何系统资源。</span>
+        fos<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>项目src下生成了一个a.txt
+内容:a
+</code></pre></div><h2 id="_4-4-写入多个字节"><a href="#_4-4-写入多个字节" class="header-anchor">#</a> 4.4 写入多个字节</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//写入多个字节</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo02</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.FileOutputStream(String name)</span>
+        <span class="token comment">// 创建文件输出流以指定的名称写入文件。</span>
+        <span class="token class-name">FileOutputStream</span> fos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span><span class="token string">&quot;src\\a.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.void---write(byte[] b)</span>
+        <span class="token comment">//将 b.length个字节从指定的字节数组写入此文件输出流。</span>
+        <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">97</span><span class="token punctuation">,</span><span class="token number">98</span><span class="token punctuation">,</span><span class="token number">99</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+        fos<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>bytes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//void close()</span>
+        <span class="token comment">//关闭此文件输出流并释放与此流相关联的任何系统资源。</span>
+        fos<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>文件:
+abcd
+</code></pre></div><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//指定字节数组写入此文件输出流</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo02</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.FileOutputStream(String name)</span>
+        <span class="token comment">// 创建文件输出流以指定的名称写入文件。</span>
+        <span class="token class-name">FileOutputStream</span> fos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span><span class="token string">&quot;src\\a.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.void--write(byte[] b, int off, int len)</span>
+        <span class="token comment">//将 len字节从位于偏移量 off的指定字节数组写入此文件输出流。</span>
+        <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">97</span><span class="token punctuation">,</span><span class="token number">98</span><span class="token punctuation">,</span><span class="token number">99</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+        fos<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>bytes<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//void close()</span>
+        <span class="token comment">//关闭此文件输出流并释放与此流相关联的任何系统资源。</span>
+        fos<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>文件
+bc
+</code></pre></div><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//字符串转字节流输出到文件</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo02</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.FileOutputStream(String name)</span>
+        <span class="token comment">// 创建文件输出流以指定的名称写入文件。</span>
+        <span class="token class-name">FileOutputStream</span> fos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span><span class="token string">&quot;src\\a.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.void---write(byte[] b)</span>
+        <span class="token comment">//将 b.length个字节从指定的字节数组写入此文件输出流。</span>
+        <span class="token comment">//3.字符串转字节</span>
+        <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes <span class="token operator">=</span> <span class="token string">&quot;你好&quot;</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        fos<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>bytes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//void close()</span>
+        <span class="token comment">//关闭此文件输出流并释放与此流相关联的任何系统资源。</span>
+        fos<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>文件
+你好
+</code></pre></div><h2 id="_4-3-字节流的续写和换行"><a href="#_4-3-字节流的续写和换行" class="header-anchor">#</a> 4.3 字节流的续写和换行</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//字节流的续写</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo03</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//FileOutputStream(String name, boolean append)</span>
+        <span class="token comment">//创建文件输出流以指定的名称写入文件。append是否续写</span>
+        <span class="token class-name">FileOutputStream</span> fos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span><span class="token string">&quot;src\\a.txt&quot;</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.void---write(byte[] b)</span>
+        <span class="token comment">//将 b.length个字节从指定的字节数组写入此文件输出流。</span>
+        fos<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;你好&quot;</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//void close()</span>
+        <span class="token comment">//关闭此文件输出流并释放与此流相关联的任何系统资源。</span>
+        fos<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>运行三次
+你好你好你好
+</code></pre></div><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//字节流的换行</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo03</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//FileOutputStream(String name, boolean append)</span>
+        <span class="token comment">//创建文件输出流以指定的名称写入文件。append是否续写</span>
+        <span class="token class-name">FileOutputStream</span> fos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span><span class="token string">&quot;src\\b.txt&quot;</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.void---write(byte[] b)</span>
+        <span class="token comment">//将 b.length个字节从指定的字节数组写入此文件输出流。</span>
+        <span class="token comment">//换行 windows \r\n linux /n mar /r</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            fos<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;你好&quot;</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            fos<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;\r\n&quot;</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">//void close()</span>
+        <span class="token comment">//关闭此文件输出流并释放与此流相关联的任何系统资源。</span>
+        fos<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>你好
+你好
+你好
+你好
+你好
+</code></pre></div><h1 id="五、字节输入流"><a href="#五、字节输入流" class="header-anchor">#</a> 五、字节输入流</h1> <h2 id="_4-1-字节输入流的所有类的超类"><a href="#_4-1-字节输入流的所有类的超类" class="header-anchor">#</a> 4.1 字节输入流的所有类的超类</h2> <p><strong>输入流共有的方法</strong></p> <table><thead><tr><th>Modifier and Type</th> <th>Method and Description</th></tr></thead> <tbody><tr><td><code>int</code></td> <td><code>available()</code>  返回从该输入流中可以读取（或跳过）的字节数的估计值，而不会被下一次调用此输入流的方法阻塞。</td></tr> <tr><td><code>void</code></td> <td><code>close()</code>  关闭此输入流并释放与流相关联的任何系统资源。</td></tr> <tr><td><code>void</code></td> <td><code>mark(int readlimit)</code>  标记此输入流中的当前位置。</td></tr> <tr><td><code>boolean</code></td> <td><code>markSupported()</code>  测试这个输入流是否支持 <code>mark</code>和 <code>reset</code>方法。</td></tr> <tr><td><code>abstract int</code></td> <td><code>read()</code>  从输入流读取数据的下一个字节。</td></tr> <tr><td><code>int</code></td> <td><code>read(byte[] b)</code>  从输入流读取一些字节数，并将它们存储到缓冲区 <code>b</code> 。</td></tr> <tr><td><code>int</code></td> <td><code>read(byte[] b, int off, int len)</code>  从输入流读取最多 <code>len</code>字节的数据到一个字节数组。</td></tr> <tr><td><code>void</code></td> <td><code>reset()</code>  将此流重新定位到上次在此输入流上调用 <code>mark</code>方法时的位置。</td></tr> <tr><td><code>long</code></td> <td><code>skip(long n)</code>  跳过并丢弃来自此输入流的 <code>n</code>字节数据。</td></tr></tbody></table> <p><strong>已知直接子类：</strong>
+AudioInputStream ， ByteArrayInputStream ， FileInputStream ， FilterInputStream ， InputStream ， ObjectInputStream ， PipedInputStream ， SequenceInputStream ， StringBufferInputStream</p> <h2 id="_4-2-一次读入一个字节"><a href="#_4-2-一次读入一个字节" class="header-anchor">#</a> 4.2 一次读入一个字节</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//读取一个字节</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo04</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.FileInputStream(String name) 构造字节输入流</span>
+        <span class="token comment">// 通过打开与实际文件的连接来创建一个 FileInputStream ，该文件由文件系统中的路径名 name命名。</span>
+        <span class="token class-name">FileInputStream</span> fis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">&quot;src\\a.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//int--read() 从该输入流读取一个字节的数据。</span>
+        <span class="token keyword">int</span> b <span class="token operator">=</span> fis<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>控制台
+97
+a
+</code></pre></div><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//读取一个字节</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo04</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.FileInputStream(String name) 构造字节输入流</span>
+        <span class="token comment">// 通过打开与实际文件的连接来创建一个 FileInputStream ，该文件由文件系统中的路径名 name命名。</span>
+        <span class="token class-name">FileInputStream</span> fis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">&quot;src\\a.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//int--read() 从该输入流读取一个字节的数据。</span>
+        <span class="token keyword">int</span> len <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//将读入的字节存到变量中</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>len<span class="token operator">=</span>fis<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>len<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>控制台
+97
+98
+99
+100
+101
+102
+</code></pre></div><h2 id="_4-3-一次读入多个字节"><a href="#_4-3-一次读入多个字节" class="header-anchor">#</a> 4.3 一次读入多个字节</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//一次读取多个字节</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo05</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//int---read(byte[] b) 从该输入流读取最多 b.length个字节的数据为字节数组。</span>
+        <span class="token comment">//返回值为有效的字节个数</span>
+        <span class="token comment">//1.定义字节输入流</span>
+        <span class="token class-name">FileInputStream</span> fis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">&quot;src\\a.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.定义字节数组</span>
+        <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> len<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token punctuation">(</span>len<span class="token operator">=</span>fis<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>bytes<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;有效长度:&quot;</span><span class="token operator">+</span>len<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>bytes<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>控制台:
+有效长度:6
+abcdef(后面许多空格)
+</code></pre></div><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//一次读取多个字节</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo06</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//int---read(byte[] b) 从该输入流读取最多 b.length个字节的数据为字节数组。</span>
+        <span class="token comment">//返回值为有效的字节个数</span>
+        <span class="token comment">//1.定义字节输入流</span>
+        <span class="token class-name">FileInputStream</span> fis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">&quot;src\\a.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.定义字节数组</span>
+        <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> len<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token punctuation">(</span>len<span class="token operator">=</span>fis<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>bytes<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment">//字节转换为字符串</span>
+            <span class="token comment">//String(byte[] bytes, int offset, int length, String charsetName)</span>
+            <span class="token comment">//构造一个新的 String通过使用指定的字符集解码指定的字节子阵列。</span>
+            <span class="token class-name">String</span> str <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>bytes<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>len<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>abcdef(没有空格)
+</code></pre></div><h2 id="_4-4-文件的复制"><a href="#_4-4-文件的复制" class="header-anchor">#</a> 4.4 文件的复制</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//单字节复制</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo07</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.创建字节输入流对象</span>
+        <span class="token class-name">FileInputStream</span> fis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">&quot;E:\\1.mp4&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.创建字节输出流对象</span>
+        <span class="token class-name">FileOutputStream</span> fos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span><span class="token string">&quot;D:\\1.mp4&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3.定义存储字节的变量</span>
+        <span class="token keyword">int</span> len <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token comment">//4.读取字节和写入字节</span>
+        <span class="token comment">//开始时间</span>
+        <span class="token keyword">long</span> start <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>len<span class="token operator">=</span>fis<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            fos<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>len<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">//5.关闭流对象</span>
+        fos<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        fis<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//结束时间</span>
+        <span class="token keyword">long</span> end <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;总共耗时:&quot;</span><span class="token operator">+</span><span class="token punctuation">(</span>end<span class="token operator">-</span>start<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">&quot;毫秒&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>总共耗时:58631毫秒
+</code></pre></div><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//多字节复制</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo07</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.创建字节输入流对象</span>
+        <span class="token class-name">FileInputStream</span> fis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">&quot;E:\\1.mp4&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.创建字节输出流对象</span>
+        <span class="token class-name">FileOutputStream</span> fos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span><span class="token string">&quot;D:\\1.mp4&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3.定义存储字节数组</span>
+        <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token comment">//4.读取字节和写入字节</span>
+        <span class="token comment">//开始时间</span>
+        <span class="token keyword">long</span> start <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> len <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">//有效个数的长度</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token punctuation">(</span>len<span class="token operator">=</span>fis<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>bytes<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            fos<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>bytes<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>len<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">//5.关闭流对象</span>
+        fos<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        fis<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//结束时间</span>
+        <span class="token keyword">long</span> end <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;总共耗时:&quot;</span><span class="token operator">+</span><span class="token punctuation">(</span>end<span class="token operator">-</span>start<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">&quot;毫秒&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>总共耗时:107毫秒
+</code></pre></div><h2 id="_4-5-字节流存在问题"><a href="#_4-5-字节流存在问题" class="header-anchor">#</a> 4.5 字节流存在问题</h2> <div class="language- extra-class"><pre class="language-text"><code>中文站3个字节,字节流每次只读取一个字节会产生乱码
+下面是读取
+你好
+</code></pre></div><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//读取多个字节流</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo04</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.FileInputStream(String name) 构造字节输入流</span>
+        <span class="token comment">// 通过打开与实际文件的连接来创建一个 FileInputStream ，该文件由文件系统中的路径名 name命名。</span>
+        <span class="token class-name">FileInputStream</span> fis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">&quot;src\\a.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//int--read() 从该输入流读取一个字节的数据。</span>
+        <span class="token keyword">int</span> len <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//将读入的字节存到变量中</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>len<span class="token operator">=</span>fis<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>len<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>228
+189
+160
+229
+165
+189
+</code></pre></div><h1 id="六、字符流输入流"><a href="#六、字符流输入流" class="header-anchor">#</a> 六、字符流输入流</h1> <h2 id="_6-1-字符输入流的所有类的超类"><a href="#_6-1-字符输入流的所有类的超类" class="header-anchor">#</a> 6.1 字符输入流的所有类的超类</h2> <p><strong>共有的方法</strong></p> <table><thead><tr><th>Modifier and Type</th> <th>Method and Description</th></tr></thead> <tbody><tr><td><code>abstract void</code></td> <td><code>close()</code>  关闭流并释放与之相关联的任何系统资源。</td></tr> <tr><td><code>void</code></td> <td><code>mark(int readAheadLimit)</code>  标记流中的当前位置。</td></tr> <tr><td><code>boolean</code></td> <td><code>markSupported()</code>  告诉这个流是否支持mark（）操作。</td></tr> <tr><td><code>int</code></td> <td><code>read()</code>  读一个字符</td></tr> <tr><td><code>int</code></td> <td><code>read(char[] cbuf)</code>  将字符读入数组。</td></tr> <tr><td><code>abstract int</code></td> <td><code>read(char[] cbuf, int off, int len)</code>  将字符读入数组的一部分。</td></tr> <tr><td><code>int</code></td> <td><code>read(CharBuffer target)</code>  尝试将字符读入指定的字符缓冲区。</td></tr> <tr><td><code>boolean</code></td> <td><code>ready()</code>  告诉这个流是否准备好被读取。</td></tr> <tr><td><code>void</code></td> <td><code>reset()</code>  重置流。</td></tr> <tr><td><code>long</code></td> <td><code>skip(long n)</code>  跳过字符</td></tr></tbody></table> <p><strong>已知直接子类：</strong>
+BufferedReader ， CharArrayReader ， FilterReader ， InputStreamReader ， PipedReader ， StringReader</p> <h2 id="_6-2-一次读入一个字符"><a href="#_6-2-一次读入一个字符" class="header-anchor">#</a> 6.2 一次读入一个字符</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//一次读入一个字符</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo08</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.创建字符输入流对象FileReader(String fileName)</span>
+        <span class="token comment">//创建一个新的 FileReader ，给定要读取的文件的名称。</span>
+        <span class="token class-name">FileReader</span> fr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token string">&quot;src\\a.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.int---read() 读一个字符</span>
+        <span class="token keyword">int</span> len <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//把读入的字符存到变量</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>len<span class="token operator">=</span>fr<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span>len<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">//3.关闭流</span>
+        fr<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>你好aa123##
+</code></pre></div><h2 id="_6-3-一次读入多个字符"><a href="#_6-3-一次读入多个字符" class="header-anchor">#</a> 6.3 一次读入多个字符</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//一次读入多个字符</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo09</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.创建字符输入流对象FileReader(String fileName)</span>
+        <span class="token comment">//创建一个新的 FileReader ，给定要读取的文件的名称。</span>
+        <span class="token class-name">FileReader</span> fr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token string">&quot;src\\a.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.int---read(char[] cbuf)</span>
+        <span class="token keyword">int</span> len <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//字符有效个数</span>
+        <span class="token comment">//3.存入的字符数组</span>
+        <span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> chars <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">char</span><span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>len<span class="token operator">=</span>fr<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>chars<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment">//字符转换为字符串</span>
+            <span class="token class-name">String</span> str <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>chars<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>len<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>你好aa123##
+</code></pre></div><h1 id="七、字符输出流"><a href="#七、字符输出流" class="header-anchor">#</a> 七、字符输出流</h1> <h2 id="_7-1-字符输出流的所有类的超类"><a href="#_7-1-字符输出流的所有类的超类" class="header-anchor">#</a> 7.1 字符输出流的所有类的超类</h2> <p><strong>共有方法</strong></p> <table><thead><tr><th>Modifier and Type</th> <th>Method and Description</th></tr></thead> <tbody><tr><td><code>Writer</code></td> <td><code>append(char c)</code>  将指定的字符附加到此作者。</td></tr> <tr><td><code>Writer</code></td> <td><code>append(CharSequence csq)</code>  将指定的字符序列附加到此作者。</td></tr> <tr><td><code>Writer</code></td> <td><code>append(CharSequence csq, int start, int end)</code>  将指定字符序列的子序列附加到此作者。</td></tr> <tr><td><code>abstract void</code></td> <td><code>close()</code>  关闭流，先刷新。</td></tr> <tr><td><code>abstract void</code></td> <td><code>flush()</code>  刷新流。</td></tr> <tr><td><code>void</code></td> <td><code>write(char[] cbuf)</code>  写入一个字符数组。</td></tr> <tr><td><code>abstract void</code></td> <td><code>write(char[] cbuf, int off, int len)</code>  写入字符数组的一部分。</td></tr> <tr><td><code>void</code></td> <td><code>write(int c)</code>  写一个字符</td></tr> <tr><td><code>void</code></td> <td><code>write(String str)</code>  写一个字符串</td></tr> <tr><td><code>void</code></td> <td><code>write(String str, int off, int len)</code>  写一个字符串的一部分。</td></tr></tbody></table> <p><strong>已知直接子类：</strong>
+BufferedWriter ， CharArrayWriter ， FilterWriter ， OutputStreamWriter ， PipedWriter ， PrintWriter ， StringWriter</p> <h2 id="_7-1-一次写入单个字符"><a href="#_7-1-一次写入单个字符" class="header-anchor">#</a> 7.1 一次写入单个字符</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//一次写入一个字符</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo10</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.创建字符输出流对象FileWriter(String fileName)</span>
+        <span class="token comment">//构造一个给定文件名的FileWriter对象。</span>
+        <span class="token class-name">FileWriter</span> fw <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileWriter</span><span class="token punctuation">(</span><span class="token string">&quot;src\\a.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.void---write(int c) 写一个字符</span>
+        fw<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token number">5678</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3.abstract---void flush() 刷新流。将内存中的数据刷新到硬盘</span>
+        fw<span class="token punctuation">.</span><span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//4.关闭流---关闭流之前也会刷新流</span>
+        fw<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>ᘮ
+</code></pre></div><h2 id="_7-2-flush和close方法的区别"><a href="#_7-2-flush和close方法的区别" class="header-anchor">#</a> 7.2 flush和close方法的区别</h2> <p><strong>flush: 刷新缓冲区，刷新之后流可以继续使用</strong></p> <p><strong>close: 刷新缓冲区，通知系统释放资源，流不能继续使用</strong></p> <h2 id="_7-3-一次写多个字符"><a href="#_7-3-一次写多个字符" class="header-anchor">#</a> 7.3 一次写多个字符</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//一次写入一个字符数组</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo11</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.创建字符输出流对象FileWriter(String fileName)</span>
+        <span class="token comment">//构造一个给定文件名的FileWriter对象。</span>
+        <span class="token class-name">FileWriter</span> fw <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileWriter</span><span class="token punctuation">(</span><span class="token string">&quot;src\\a.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.void write(char[] cbuf)</span>
+        <span class="token comment">//写入一个字符数组。</span>
+        <span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> c <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'中'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+        fw<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3.abstract---void flush() 刷新流。将内存中的数据刷新到硬盘</span>
+        <span class="token comment">//fw.flush();</span>
+        <span class="token comment">//4.关闭流---关闭流之前也会刷新流</span>
+        fw<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>ab中
+</code></pre></div><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//一次写入字符数组一部分</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo12</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.创建字符输出流对象FileWriter(String fileName)</span>
+        <span class="token comment">//构造一个给定文件名的FileWriter对象。</span>
+        <span class="token class-name">FileWriter</span> fw <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileWriter</span><span class="token punctuation">(</span><span class="token string">&quot;src\\a.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.abstract void write(char[] cbuf, int off, int len)</span>
+        <span class="token comment">//写入字符数组的一部分。</span>
+        <span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> c <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'中'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+        fw<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3.abstract---void flush() 刷新流。将内存中的数据刷新到硬盘</span>
+        <span class="token comment">//fw.flush();</span>
+        <span class="token comment">//4.关闭流---关闭流之前也会刷新流</span>
+        fw<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>ab
+</code></pre></div><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//一次写入字符串</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo12</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.创建字符输出流对象FileWriter(String fileName)</span>
+        <span class="token comment">//构造一个给定文件名的FileWriter对象。</span>
+        <span class="token class-name">FileWriter</span> fw <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileWriter</span><span class="token punctuation">(</span><span class="token string">&quot;src\\a.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.void write(String str) 写一个字符串</span>
+        fw<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;你好&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3.abstract---void flush() 刷新流。将内存中的数据刷新到硬盘</span>
+        <span class="token comment">//fw.flush();</span>
+        <span class="token comment">//4.关闭流---关闭流之前也会刷新流</span>
+        fw<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>你好
+</code></pre></div><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//一次字符串的一部分。</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo12</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.创建字符输出流对象FileWriter(String fileName)</span>
+        <span class="token comment">//构造一个给定文件名的FileWriter对象。</span>
+        <span class="token class-name">FileWriter</span> fw <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileWriter</span><span class="token punctuation">(</span><span class="token string">&quot;src\\a.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.void write(String str, int off, int len) 写一个字符串的一部分。</span>
+        fw<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;你好啊&quot;</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3.abstract---void flush() 刷新流。将内存中的数据刷新到硬盘</span>
+        <span class="token comment">//fw.flush();</span>
+        <span class="token comment">//4.关闭流---关闭流之前也会刷新流</span>
+        fw<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>好啊
+</code></pre></div><h2 id="_7-4-字符输出流的续写和换行"><a href="#_7-4-字符输出流的续写和换行" class="header-anchor">#</a> 7.4 字符输出流的续写和换行</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//字符输出流的续写和换行</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo13</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.创建字符输出流对象FileWriter(File file, boolean append) 续写</span>
+        <span class="token class-name">FileWriter</span> fw <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileWriter</span><span class="token punctuation">(</span><span class="token string">&quot;src\\a.txt&quot;</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.void write(String str, int off, int len) 写一个字符串的一部分。</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            fw<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;你好&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            fw<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;\r\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">//3.关闭流---关闭流之前也会刷新流</span>
+        fw<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>你好
+你好
+你好
+</code></pre></div><h2 id="_7-5-try-catch处理流中的异常"><a href="#_7-5-try-catch处理流中的异常" class="header-anchor">#</a> 7.5 try catch处理流中的异常</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//流的try catch</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo14</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">FileWriter</span> fw <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            fw <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileWriter</span><span class="token punctuation">(</span><span class="token string">&quot;srcc\\a.txt&quot;</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                fw<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;你好&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                fw<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;\r\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">finally</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>fw<span class="token operator">!=</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                    fw<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>  
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h1 id="八、properties-集合"><a href="#八、properties-集合" class="header-anchor">#</a> 八、properties 集合</h1> <div class="language- extra-class"><pre class="language-text"><code>Map接口-&gt;Hashtable实现map接口-&gt;Properties继承Hashtable
+</code></pre></div><h2 id="_8-1-properties-的存储和遍历"><a href="#_8-1-properties-的存储和遍历" class="header-anchor">#</a> 8.1 properties 的存储和遍历</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo01</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.Properties() 创建一个没有默认值的空属性列表。</span>
+        <span class="token class-name">Properties</span> prop <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Properties</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.Object---setProperty(String key, String value)与Hashtable方法 put用法相同</span>
+        prop<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">&quot;张三&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;123&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        prop<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">&quot;李四&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;456&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        prop<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">&quot;王五&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;788&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3.Set&lt;String&gt; stringPropertyNames()</span>
+        <span class="token comment">//把properties中的key取出存到set中</span>
+        <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> keys <span class="token operator">=</span> prop<span class="token punctuation">.</span><span class="token function">stringPropertyNames</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">String</span> key <span class="token operator">:</span> keys<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">String</span> value <span class="token operator">=</span> prop<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>key<span class="token operator">+</span><span class="token string">&quot;:&quot;</span><span class="token operator">+</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>王五:788
+张三:123
+李四:456
+</code></pre></div><h2 id="_8-2-properties中的store方法"><a href="#_8-2-properties中的store方法" class="header-anchor">#</a> 8.2 properties中的store方法</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//properties中的store</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo02</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.创建对象并存入数据</span>
+        <span class="token class-name">Properties</span> prop <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Properties</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        prop<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">&quot;张三&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;123&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        prop<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">&quot;李四&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;456&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        prop<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">&quot;王五&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;788&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.创建字符输出流</span>
+        <span class="token class-name">FileWriter</span> fw <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileWriter</span><span class="token punctuation">(</span><span class="token string">&quot;src//c.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3.void store(Writer writer, String comments)</span>
+        <span class="token comment">//写到硬盘,comments注释,不能写中文，一般用&quot;&quot;</span>
+        prop<span class="token punctuation">.</span><span class="token function">store</span><span class="token punctuation">(</span>fw<span class="token punctuation">,</span><span class="token string">&quot;test properties&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//4.关闭流</span>
+        fw<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>c.txt文件里的内容:
+#test properties
+#Tue Mar 03 14:56:54 CST 2020
+王五=788
+张三=123
+李四=456
+</code></pre></div><h2 id="_8-3-properties中的load方法"><a href="#_8-3-properties中的load方法" class="header-anchor">#</a> 8.3 properties中的load方法</h2> <div class="language- extra-class"><pre class="language-text"><code>#test properties
+#Tue Mar 03 14:56:54 CST 2020
+#c.txt里的内容 分割可以是=,空格,其他符号
+王五=788
+张三=123
+李四=456
+</code></pre></div><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//读取properties</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo03</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.创建对象</span>
+        <span class="token class-name">Properties</span> prop <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Properties</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.创建输入流对象</span>
+        <span class="token class-name">FileReader</span> fr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token string">&quot;src\\c.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3.读入void load(Reader reader) 以简单的线性格式从输入字符流读取属性列表（关键字和元素对）。</span>
+        prop<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span>fr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//4.遍历读取到的数据</span>
+        <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> keys <span class="token operator">=</span> prop<span class="token punctuation">.</span><span class="token function">stringPropertyNames</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">String</span> key <span class="token operator">:</span> keys<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">String</span> value <span class="token operator">=</span> prop<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>key<span class="token operator">+</span><span class="token string">&quot;:&quot;</span><span class="token operator">+</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>王五:788
+张三:123
+李四:456
+</code></pre></div><h1 id="九、缓冲流"><a href="#九、缓冲流" class="header-anchor">#</a> 九、缓冲流</h1> <h2 id="_9-1-字节缓存流"><a href="#_9-1-字节缓存流" class="header-anchor">#</a> 9.1 字节缓存流</h2> <div class="language- extra-class"><pre class="language-text"><code>BufferedOutputStream extends FilterOutputStream extends OutputStream
+</code></pre></div><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//字节缓存输出流</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo01</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.创建FileOutputStream</span>
+        <span class="token class-name">FileOutputStream</span> fos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span><span class="token string">&quot;src\\d.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.BufferedOutputStream(OutputStream out)</span>
+        <span class="token comment">//创建一个新的缓冲输出流，以将数据写入指定的底层输出流。</span>
+        <span class="token class-name">BufferedOutputStream</span> bops <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedOutputStream</span><span class="token punctuation">(</span>fos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3.写入缓存区</span>
+        bops<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;写入到内部缓存区&quot;</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//4.刷新缓存区</span>
+        bops<span class="token punctuation">.</span><span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//5.关闭缓存区</span>
+        bops<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        fos<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>写入到内部缓存区
+</code></pre></div><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//字节缓存输入流</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo02</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.创建FileInputStream</span>
+        <span class="token class-name">FileInputStream</span> fis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">&quot;src\\d.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.BufferedInputStream(InputStream in)</span>
+        <span class="token comment">//创建一个 BufferedInputStream并保存其参数，输入流 in ，供以后使用。</span>
+        <span class="token class-name">BufferedInputStream</span> bops <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedInputStream</span><span class="token punctuation">(</span>fis<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3.从缓冲区读入数据</span>
+        <span class="token keyword">int</span> len <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>len<span class="token operator">=</span>bops<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span> len<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">//4.关闭缓存区</span>
+        bops<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        fis<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>adfdfe
+</code></pre></div><h2 id="_9-2-字符缓冲流"><a href="#_9-2-字符缓冲流" class="header-anchor">#</a> 9.2 字符缓冲流</h2> <div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//字符缓存输入流</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo03</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.创建FileWriter</span>
+        <span class="token class-name">FileWriter</span> fw <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileWriter</span><span class="token punctuation">(</span><span class="token string">&quot;src\\a.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.BufferedWriter(Writer out)</span>
+        <span class="token comment">//创建使用默认大小的输出缓冲区的缓冲字符输出流。</span>
+        <span class="token class-name">BufferedWriter</span> bw <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedWriter</span><span class="token punctuation">(</span>fw<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3.从缓冲区写入数据</span>
+       bw<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;你好！&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token comment">//4.刷新缓冲流</span>
+       bw<span class="token punctuation">.</span><span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token comment">//5.关闭流</span>
+       bw<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       fw<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>你好！
+</code></pre></div><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//字符缓存输出流</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo04</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.创建FileReader</span>
+        <span class="token class-name">FileReader</span> fr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token string">&quot;src\\a.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.BufferedReader(Reader in)</span>
+        <span class="token comment">//创建使用默认大小的输入缓冲区的缓冲字符输入流。</span>
+        <span class="token class-name">BufferedReader</span> br <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedReader</span><span class="token punctuation">(</span>fr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3.从缓冲区读入数据</span>
+        <span class="token keyword">int</span> len<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>len<span class="token operator">=</span>br<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span>len<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">//5.关闭流</span>
+       br<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       fr<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>你好！
+</code></pre></div><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//读一行文字。</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo05</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+        <span class="token comment">//1.创建FileReader</span>
+        <span class="token class-name">FileReader</span> fr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token string">&quot;src\\a.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//2.BufferedReader(Reader in)</span>
+        <span class="token comment">//创建使用默认大小的输入缓冲区的缓冲字符输入流。</span>
+        <span class="token class-name">BufferedReader</span> br <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedReader</span><span class="token punctuation">(</span>fr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//3.String readLine()</span>
+        <span class="token comment">//读一行文字。</span>
+        <span class="token class-name">String</span> s <span class="token operator">=</span> br<span class="token punctuation">.</span><span class="token function">readLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//4.关闭流</span>
+       br<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       fr<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>你好！
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/docs/java/File类.html" class="prev">
+        File类
+      </a></span> <span class="next"><a href="/docs/java/集合.html">
+        集合
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/docs/assets/js/app.7890f91e.js" defer></script><script src="/docs/assets/js/2.a8bc3a53.js" defer></script><script src="/docs/assets/js/62.9a22eb9a.js" defer></script>
+  </body>
+</html>

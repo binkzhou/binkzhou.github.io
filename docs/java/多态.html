@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>多态 | 我的笔记</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.52bb2005.css" as="style"><link rel="preload" href="/docs/assets/js/app.7890f91e.js" as="script"><link rel="preload" href="/docs/assets/js/2.a8bc3a53.js" as="script"><link rel="preload" href="/docs/assets/js/67.3c201101.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.6d1a44dc.js"><link rel="prefetch" href="/docs/assets/js/11.88b33277.js"><link rel="prefetch" href="/docs/assets/js/12.d888dad3.js"><link rel="prefetch" href="/docs/assets/js/13.f4b320f4.js"><link rel="prefetch" href="/docs/assets/js/14.affc25d2.js"><link rel="prefetch" href="/docs/assets/js/15.f3f21810.js"><link rel="prefetch" href="/docs/assets/js/16.20cfbcd3.js"><link rel="prefetch" href="/docs/assets/js/17.8fa60e8f.js"><link rel="prefetch" href="/docs/assets/js/18.220db854.js"><link rel="prefetch" href="/docs/assets/js/19.c6db72e7.js"><link rel="prefetch" href="/docs/assets/js/20.121df49a.js"><link rel="prefetch" href="/docs/assets/js/21.b9b44369.js"><link rel="prefetch" href="/docs/assets/js/22.a7d81dee.js"><link rel="prefetch" href="/docs/assets/js/23.05a4db07.js"><link rel="prefetch" href="/docs/assets/js/24.0e35ee22.js"><link rel="prefetch" href="/docs/assets/js/25.9c3e07da.js"><link rel="prefetch" href="/docs/assets/js/26.6dcfef0f.js"><link rel="prefetch" href="/docs/assets/js/27.6ad8c329.js"><link rel="prefetch" href="/docs/assets/js/28.6b5d3991.js"><link rel="prefetch" href="/docs/assets/js/29.407c6de9.js"><link rel="prefetch" href="/docs/assets/js/3.3ddcfe9a.js"><link rel="prefetch" href="/docs/assets/js/30.34551e96.js"><link rel="prefetch" href="/docs/assets/js/31.47783344.js"><link rel="prefetch" href="/docs/assets/js/32.c6f4cea4.js"><link rel="prefetch" href="/docs/assets/js/33.03d5e501.js"><link rel="prefetch" href="/docs/assets/js/34.0ca4e267.js"><link rel="prefetch" href="/docs/assets/js/35.e999eeee.js"><link rel="prefetch" href="/docs/assets/js/36.544af633.js"><link rel="prefetch" href="/docs/assets/js/37.9e0cc013.js"><link rel="prefetch" href="/docs/assets/js/38.1c3df97c.js"><link rel="prefetch" href="/docs/assets/js/39.9ce8a5f7.js"><link rel="prefetch" href="/docs/assets/js/4.72d66176.js"><link rel="prefetch" href="/docs/assets/js/40.323e7e25.js"><link rel="prefetch" href="/docs/assets/js/41.9440b8ee.js"><link rel="prefetch" href="/docs/assets/js/42.959d789d.js"><link rel="prefetch" href="/docs/assets/js/43.1a427e6d.js"><link rel="prefetch" href="/docs/assets/js/44.9adaa5b6.js"><link rel="prefetch" href="/docs/assets/js/45.b70993ab.js"><link rel="prefetch" href="/docs/assets/js/46.bc570f17.js"><link rel="prefetch" href="/docs/assets/js/47.954dd27f.js"><link rel="prefetch" href="/docs/assets/js/48.72d2a29d.js"><link rel="prefetch" href="/docs/assets/js/49.7ddfd074.js"><link rel="prefetch" href="/docs/assets/js/5.5087e4f8.js"><link rel="prefetch" href="/docs/assets/js/50.2684a6e6.js"><link rel="prefetch" href="/docs/assets/js/51.00572c60.js"><link rel="prefetch" href="/docs/assets/js/52.5a70be73.js"><link rel="prefetch" href="/docs/assets/js/53.9f6156b6.js"><link rel="prefetch" href="/docs/assets/js/54.9efed889.js"><link rel="prefetch" href="/docs/assets/js/55.78300585.js"><link rel="prefetch" href="/docs/assets/js/56.e33be804.js"><link rel="prefetch" href="/docs/assets/js/57.0c404d88.js"><link rel="prefetch" href="/docs/assets/js/58.2f99406b.js"><link rel="prefetch" href="/docs/assets/js/59.b7a3347e.js"><link rel="prefetch" href="/docs/assets/js/6.7a9273f7.js"><link rel="prefetch" href="/docs/assets/js/60.f14f3fe9.js"><link rel="prefetch" href="/docs/assets/js/61.f770fcc5.js"><link rel="prefetch" href="/docs/assets/js/62.9a22eb9a.js"><link rel="prefetch" href="/docs/assets/js/63.94b2ea39.js"><link rel="prefetch" href="/docs/assets/js/64.e2bf811b.js"><link rel="prefetch" href="/docs/assets/js/65.74d494f9.js"><link rel="prefetch" href="/docs/assets/js/66.a375bb32.js"><link rel="prefetch" href="/docs/assets/js/68.f2c6c1f4.js"><link rel="prefetch" href="/docs/assets/js/69.268faa44.js"><link rel="prefetch" href="/docs/assets/js/7.1a3a696f.js"><link rel="prefetch" href="/docs/assets/js/70.6f4df6a6.js"><link rel="prefetch" href="/docs/assets/js/71.37964dc5.js"><link rel="prefetch" href="/docs/assets/js/72.eef27e2e.js"><link rel="prefetch" href="/docs/assets/js/73.d7a9dbd9.js"><link rel="prefetch" href="/docs/assets/js/74.f2040aa6.js"><link rel="prefetch" href="/docs/assets/js/75.9f939c37.js"><link rel="prefetch" href="/docs/assets/js/76.b1358302.js"><link rel="prefetch" href="/docs/assets/js/77.83a2c6b3.js"><link rel="prefetch" href="/docs/assets/js/78.34149b3d.js"><link rel="prefetch" href="/docs/assets/js/79.fde21713.js"><link rel="prefetch" href="/docs/assets/js/8.9fb3aa96.js"><link rel="prefetch" href="/docs/assets/js/80.6461e24e.js"><link rel="prefetch" href="/docs/assets/js/81.e6c53d45.js"><link rel="prefetch" href="/docs/assets/js/82.19506b41.js"><link rel="prefetch" href="/docs/assets/js/83.b39f337e.js"><link rel="prefetch" href="/docs/assets/js/84.6dae4be4.js"><link rel="prefetch" href="/docs/assets/js/85.862470ad.js"><link rel="prefetch" href="/docs/assets/js/86.6121868f.js"><link rel="prefetch" href="/docs/assets/js/87.7c0c10bf.js"><link rel="prefetch" href="/docs/assets/js/88.24fd0017.js"><link rel="prefetch" href="/docs/assets/js/9.24bd0981.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.52bb2005.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><!----> <span class="site-name">我的笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/docs/javascrip/" class="nav-link">
+  JavaScrip
+</a></li><li class="dropdown-item"><!----> <a href="/docs/typescrip/" class="nav-link">
+  TypeScrip
+</a></li><li class="dropdown-item"><!----> <a href="/docs/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/docs/hook/" class="nav-link">
+  Hook
+</a></li><li class="dropdown-item"><!----> <a href="/docs/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/docs/vue3/" class="nav-link">
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/docs/webpack/" class="nav-link">
+  webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/java/" class="nav-link router-link-active">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/docs/mysql/" class="nav-link">
+  Mysql
+</a></li><li class="dropdown-item"><!----> <a href="/docs/node/" class="nav-link">
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/docs/j2ee/" class="nav-link">
+  J2EE
+</a></li><li class="dropdown-item"><!----> <a href="/docs/ssm/" class="nav-link">
+  SSM
+</a></li></ul></div></div><div class="nav-item"><a href="/docs/efficiency/1.常用网站.html" class="nav-link">
+  随记
+</a></div><div class="nav-item"><a href="/docs/collection/1.立即执行函数.html" class="nav-link">
+  收藏
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/docs/javascrip/" class="nav-link">
+  JavaScrip
+</a></li><li class="dropdown-item"><!----> <a href="/docs/typescrip/" class="nav-link">
+  TypeScrip
+</a></li><li class="dropdown-item"><!----> <a href="/docs/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/docs/hook/" class="nav-link">
+  Hook
+</a></li><li class="dropdown-item"><!----> <a href="/docs/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/docs/vue3/" class="nav-link">
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/docs/webpack/" class="nav-link">
+  webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/java/" class="nav-link router-link-active">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/docs/mysql/" class="nav-link">
+  Mysql
+</a></li><li class="dropdown-item"><!----> <a href="/docs/node/" class="nav-link">
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/docs/j2ee/" class="nav-link">
+  J2EE
+</a></li><li class="dropdown-item"><!----> <a href="/docs/ssm/" class="nav-link">
+  SSM
+</a></li></ul></div></div><div class="nav-item"><a href="/docs/efficiency/1.常用网站.html" class="nav-link">
+  随记
+</a></div><div class="nav-item"><a href="/docs/collection/1.立即执行函数.html" class="nav-link">
+  收藏
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/docs/java/" aria-current="page" class="sidebar-link">常用API</a></li><li><a href="/docs/java/File类.html" class="sidebar-link">File类</a></li><li><a href="/docs/java/IO流.html" class="sidebar-link">IO流</a></li><li><a href="/docs/java/集合.html" class="sidebar-link">集合</a></li><li><a href="/docs/java/JDBC.html" class="sidebar-link">JDBC</a></li><li><a href="/docs/java/反射和注解.html" class="sidebar-link">反射和注解</a></li><li><a href="/docs/java/继承.html" class="sidebar-link">继承</a></li><li><a href="/docs/java/抽象类.html" class="sidebar-link">抽象类</a></li><li><a href="/docs/java/多态.html" class="active sidebar-link">多态</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/java/多态.html#_2-1-概述" class="sidebar-link">2.1 概述</a></li><li class="sidebar-sub-header"><a href="/docs/java/多态.html#_2-2-多态的体现" class="sidebar-link">2.2 多态的体现</a></li><li class="sidebar-sub-header"><a href="/docs/java/多态.html#_2-3-多态的好处" class="sidebar-link">2.3 多态的好处</a></li><li class="sidebar-sub-header"><a href="/docs/java/多态.html#_2-4-引用类型转换" class="sidebar-link">2.4 引用类型转换</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/java/多态.html#向上转型" class="sidebar-link">向上转型</a></li><li class="sidebar-sub-header"><a href="/docs/java/多态.html#向下转型" class="sidebar-link">向下转型</a></li><li class="sidebar-sub-header"><a href="/docs/java/多态.html#为什么要转型" class="sidebar-link">为什么要转型</a></li><li class="sidebar-sub-header"><a href="/docs/java/多态.html#定义测试类" class="sidebar-link">定义测试类：</a></li><li class="sidebar-sub-header"><a href="/docs/java/多态.html#转型的异常" class="sidebar-link">转型的异常</a></li></ul></li><li class="sidebar-sub-header"><a href="/docs/java/多态.html#接口多态的综合案例" class="sidebar-link">接口多态的综合案例</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/java/多态.html#_3-1-笔记本电脑" class="sidebar-link">3.1 笔记本电脑</a></li><li class="sidebar-sub-header"><a href="/docs/java/多态.html#_3-2-案例分析" class="sidebar-link">3.2 案例分析</a></li><li class="sidebar-sub-header"><a href="/docs/java/多态.html#_3-3-案例实现" class="sidebar-link">3.3 案例实现</a></li></ul></li></ul></li><li><a href="/docs/java/接口.html" class="sidebar-link">接口</a></li><li><a href="/docs/java/final关键字.html" class="sidebar-link">final关键字</a></li><li><a href="/docs/java/内部类.html" class="sidebar-link">内部类</a></li><li><a href="/docs/java/权限修饰符.html" class="sidebar-link">权限修饰符</a></li><li><a href="/docs/java/网络编程.html" class="sidebar-link">网络编程</a></li><li><a href="/docs/java/异常.html" class="sidebar-link">异常</a></li><li><a href="/docs/java/引用类型.html" class="sidebar-link">引用类型</a></li><li><a href="/docs/java/多线程.html" class="sidebar-link">多线程</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="_2-1-概述"><a href="#_2-1-概述" class="header-anchor">#</a> 2.1 概述</h2> <p><strong>引入</strong></p> <p>多态是继封装、继承之后，面向对象的第三大特性。 生活中，比如跑的动作，小猫、小狗和大象，跑起来是不一样的。再比如飞的动作，昆虫、鸟类和飞机，飞起来也 是不一样的。可见，同一行为，通过不同的事物，可以体现出来的不同的形态。多态，描述的就是这样的状态。</p> <p><strong>定义</strong></p> <p>多态： 是指同一行为，具有多个不同表现形式。</p> <p><strong>前提【重点】</strong></p> <p>1.继承或者实现【二选一】</p> <p>2.方法的重写【意义体现：不重写，无意义】</p> <p>3.父类引用指向子类对象【格式体现】</p> <h2 id="_2-2-多态的体现"><a href="#_2-2-多态的体现" class="header-anchor">#</a> 2.2 多态的体现</h2> <p>多态体现的格式：</p> <div class="language-java extra-class"><pre class="language-java"><code>父类类型 变量名 <span class="token operator">=</span> <span class="token keyword">new</span> 子类对象；
+变量名<span class="token punctuation">.</span>方法名<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><blockquote><p>父类类型：指子类对象继承的父类类型，或者实现的父接口类型。</p></blockquote> <p>代码如下：</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">Fu</span> f <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Zi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+f<span class="token punctuation">.</span><span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>当使用多态方式调用方法时，首先检查父类中是否有该方法，如果没有，则编译错误；如果有，执行的是子类重写 后方法。代码如下：</p> <p>定义父类：</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>定义子类：</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">class</span> <span class="token class-name">Cat</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;吃鱼&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;吃骨头&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>定义测试类：</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 多态形式，创建对象</span>
+        <span class="token class-name">Animal</span> a1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 调用的是 Cat 的 eat</span>
+        a1<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 多态形式，创建对象</span>
+        <span class="token class-name">Animal</span> a2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 调用的是 Dog 的 eat</span>
+        a2<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="_2-3-多态的好处"><a href="#_2-3-多态的好处" class="header-anchor">#</a> 2.3 多态的好处</h2> <p>实际开发的过程中，父类类型作为方法形式参数，传递子类对象给方法，进行方法的调用，更能体现出多态的扩展 性与便利。代码如下：</p> <p>定义父类：</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>定义子类：</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">class</span> <span class="token class-name">Cat</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;吃鱼&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;吃骨头&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>定义测试类：</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 多态形式，创建对象</span>
+        <span class="token class-name">Cat</span> c <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Dog</span> d <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 调用showCatEat</span>
+        <span class="token function">showCatEat</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 调用showDogEat</span>
+        <span class="token function">showDogEat</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">/*
+        以上两个方法, 均可以被showAnimalEat(Animal a)方法所替代
+        而执行效果一致
+        */</span>
+        <span class="token function">showAnimalEat</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">showAnimalEat</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> showCatEat <span class="token punctuation">(</span><span class="token class-name">Cat</span> c<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    	c<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> showDogEat <span class="token punctuation">(</span><span class="token class-name">Dog</span> d<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    	d<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> showAnimalEat <span class="token punctuation">(</span><span class="token class-name">Animal</span> a<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    	a<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>由于多态特性的支持，showAnimalEat方法的Animal类型，是Cat和Dog的父类类型，父类类型接收子类对象，当 然可以把Cat对象和Dog对象，传递给方法。</p> <p>当eat方法执行时，多态规定，执行的是子类重写的方法，那么效果自然与showCatEat、showDogEat方法一致， 所以showAnimalEat完全可以替代以上两方法。</p> <p>不仅仅是替代，在扩展性方面，无论之后再多的子类出现，我们都不需要编写showXxxEat方法了，直接使用 showAnimalEat都可以完成。</p> <p>所以，多态的好处，体现在，可以使程序编写的更简单，并有良好的扩展。</p> <h2 id="_2-4-引用类型转换"><a href="#_2-4-引用类型转换" class="header-anchor">#</a> 2.4 引用类型转换</h2> <p>多态的转型分为向上转型与向下转型两种：</p> <h3 id="向上转型"><a href="#向上转型" class="header-anchor">#</a> 向上转型</h3> <p><strong>向上转型</strong>：多态本身是子类类型向父类类型向上转换的过程，这个过程是默认的。</p> <p>当父类引用指向一个子类对象时，便是向上转型。</p> <p>使用格式：</p> <div class="language-java extra-class"><pre class="language-java"><code>父类类型 变量名 <span class="token operator">=</span> <span class="token keyword">new</span> 子类类型<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+如：<span class="token class-name">Animal</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="向下转型"><a href="#向下转型" class="header-anchor">#</a> 向下转型</h3> <p>向下转型：父类类型向子类类型向下转换的过程，这个过程是强制的。</p> <p>一个已经向上转型的子类对象，将父类引用转为子类引用，可以使用强制类型转换的格式，便是向下转型。 使用格式：</p> <div class="language-java extra-class"><pre class="language-java"><code>子类类型 变量名 <span class="token operator">=</span> <span class="token punctuation">(</span>子类类型<span class="token punctuation">)</span> 父类变量名<span class="token punctuation">;</span>
+如<span class="token operator">:</span><span class="token class-name">Cat</span> c <span class="token operator">=</span><span class="token punctuation">(</span><span class="token class-name">Cat</span><span class="token punctuation">)</span> a<span class="token punctuation">;</span>
+</code></pre></div><h3 id="为什么要转型"><a href="#为什么要转型" class="header-anchor">#</a> 为什么要转型</h3> <p>当使用多态方式调用方法时，首先检查父类中是否有该方法，如果没有，则编译错误。也就是说，不能调用子类拥 有，而父类没有的方法。编译都错误，更别说运行了。这也是多态给我们带来的一点&quot;小麻烦&quot;。所以，想要调用子 类特有的方法，必须做向下转型。</p> <p>转型演示，代码如下：</p> <p>定义类：</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+	<span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Cat</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;吃鱼&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">catchMouse</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;抓老鼠&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;吃骨头&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">watchHouse</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;看家&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="定义测试类"><a href="#定义测试类" class="header-anchor">#</a> 定义测试类：</h3> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 向上转型</span>
+        <span class="token class-name">Animal</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        a<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 调用的是 Cat 的 eat</span>
+        <span class="token comment">// 向下转型</span>
+        <span class="token class-name">Cat</span> c <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Cat</span><span class="token punctuation">)</span>a<span class="token punctuation">;</span>
+        c<span class="token punctuation">.</span><span class="token function">catchMouse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 调用的是 Cat 的 catchMouse</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h3 id="转型的异常"><a href="#转型的异常" class="header-anchor">#</a> 转型的异常</h3> <p>转型的过程中，一不小心就会遇到这样的问题，请看如下代码：</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 向上转型</span>
+        <span class="token class-name">Animal</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        a<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 调用的是 Cat 的 eat</span>
+        <span class="token comment">// 向下转型</span>
+        <span class="token class-name">Dog</span> d <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Dog</span><span class="token punctuation">)</span>a<span class="token punctuation">;</span>
+        d<span class="token punctuation">.</span><span class="token function">watchHouse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 调用的是 Dog 的 watchHouse 【运行报错】</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>这段代码可以通过编译，但是运行时，却报出了 <code>ClassCastException</code> ，类型转换异常！这是因为，明明创建了 Cat类型对象，运行时，当然不能转换成Dog对象的。这两个类型并没有任何继承关系，不符合类型转换的定义。</p> <p>为了避免ClassCastException的发生，Java提供了<code>instanceof</code>关键字，给引用变量做类型的校验，格式如下：</p> <div class="language-java extra-class"><pre class="language-java"><code>变量名 <span class="token keyword">instanceof</span> 数据类型
+如果变量属于该数据类型，返回<span class="token boolean">true</span>。
+如果变量不属于该数据类型，返回<span class="token boolean">false</span>。
+</code></pre></div><p>所以，转换前，我们最好先做一个判断，代码如下：</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 向上转型</span>
+        <span class="token class-name">Animal</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        a<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 调用的是 Cat 的 eat</span>
+        <span class="token comment">// 向下转型</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token keyword">instanceof</span> <span class="token class-name">Cat</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token class-name">Cat</span> c <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Cat</span><span class="token punctuation">)</span>a<span class="token punctuation">;</span>
+            c<span class="token punctuation">.</span><span class="token function">catchMouse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 调用的是 Cat 的 catchMouse</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token keyword">instanceof</span> <span class="token class-name">Dog</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token class-name">Dog</span> d <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Dog</span><span class="token punctuation">)</span>a<span class="token punctuation">;</span>
+            d<span class="token punctuation">.</span><span class="token function">watchHouse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 调用的是 Dog 的 watchHouse</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="接口多态的综合案例"><a href="#接口多态的综合案例" class="header-anchor">#</a> 接口多态的综合案例</h2> <h3 id="_3-1-笔记本电脑"><a href="#_3-1-笔记本电脑" class="header-anchor">#</a> 3.1 笔记本电脑</h3> <p>笔记本电脑（laptop）通常具备使用USB设备的功能。在生产时，笔记本都预留了可以插入USB设备的USB接口， 但具体是什么USB设备，笔记本厂商并不关心，只要符合USB规格的设备都可以。</p> <p>定义USB接口，具备最基本的开启功能和关闭功能。鼠标和键盘要想能在电脑上使用，那么鼠标和键盘也必须遵守 USB规范，实现USB接口，否则鼠标和键盘的生产出来也无法使用。</p> <h3 id="_3-2-案例分析"><a href="#_3-2-案例分析" class="header-anchor">#</a> 3.2 案例分析</h3> <p>进行描述笔记本类，实现笔记本使用USB鼠标、USB键盘</p> <ul><li>USB接口，包含开启功能、关闭功能</li> <li>笔记本类，包含运行功能、关机功能、使用USB设备功能</li> <li>鼠标类，要实现USB接口，并具备点击的方法</li> <li>键盘类，要实现USB接口，具备敲击的方法</li></ul> <h3 id="_3-3-案例实现"><a href="#_3-3-案例实现" class="header-anchor">#</a> 3.3 案例实现</h3> <p>定义USB接口：</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">interface</span> USB <span class="token punctuation">{</span>
+    <span class="token keyword">void</span> <span class="token keyword">open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 开启功能</span>
+    <span class="token keyword">void</span> <span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 关闭功能</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>定义鼠标类：</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">class</span> <span class="token class-name">Mouse</span> <span class="token keyword">implements</span> USB <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token keyword">open</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;鼠标开启，红灯闪一闪&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;鼠标关闭，红灯熄灭&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;鼠标单击&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>定义键盘类：</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">class</span> <span class="token class-name">KeyBoard</span> <span class="token keyword">implements</span> USB <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token keyword">open</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;键盘开启，绿灯闪一闪&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;键盘关闭，绿灯熄灭&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">type</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;键盘打字&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>定义笔记本类：</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">class</span> <span class="token class-name">Laptop</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 笔记本开启运行功能</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;笔记本运行&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 笔记本使用usb设备，这时当笔记本对象调用这个功能时，必须给其传递一个符合USB规则的USB设备</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">useUSB</span><span class="token punctuation">(</span><span class="token class-name">USB</span> usb<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 判断是否有USB设备</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>usb <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        usb<span class="token punctuation">.</span><span class="token keyword">open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 类型转换,调用特有方法</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>usb <span class="token keyword">instanceof</span> <span class="token class-name">Mouse</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token class-name">Mouse</span> m <span class="token operator">=</span> （<span class="token class-name">Mouse</span>）usb；
+            m<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>usb <span class="token keyword">instanceof</span> <span class="token class-name">KeyBoard</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token class-name">KeyBoard</span> kb <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">KeyBoard</span><span class="token punctuation">)</span>usb<span class="token punctuation">;</span>
+            kb<span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        usb<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">shutDown</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    	<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;笔记本关闭&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>测试类，代码如下：</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 创建笔记本实体对象</span>
+        <span class="token class-name">Laptop</span> lt <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Laptop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 笔记本开启</span>
+        lt<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 创建鼠标实体对象</span>
+        <span class="token class-name">Usb</span> u <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Mouse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 笔记本使用鼠标</span>
+        lt<span class="token punctuation">.</span><span class="token function">useUSB</span><span class="token punctuation">(</span>u<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 创建键盘实体对象</span>
+        <span class="token class-name">KeyBoard</span> kb <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">KeyBoard</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 笔记本使用键盘</span>
+        lt<span class="token punctuation">.</span><span class="token function">useUSB</span><span class="token punctuation">(</span>kb<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 笔记本关闭</span>
+        lt<span class="token punctuation">.</span><span class="token function">shutDown</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/docs/java/抽象类.html" class="prev">
+        抽象类
+      </a></span> <span class="next"><a href="/docs/java/接口.html">
+        接口
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/docs/assets/js/app.7890f91e.js" defer></script><script src="/docs/assets/js/2.a8bc3a53.js" defer></script><script src="/docs/assets/js/67.3c201101.js" defer></script>
+  </body>
+</html>

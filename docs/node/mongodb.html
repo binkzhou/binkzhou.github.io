@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>mongodb | 我的笔记</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.52bb2005.css" as="style"><link rel="preload" href="/docs/assets/js/app.7890f91e.js" as="script"><link rel="preload" href="/docs/assets/js/2.a8bc3a53.js" as="script"><link rel="preload" href="/docs/assets/js/76.b1358302.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.6d1a44dc.js"><link rel="prefetch" href="/docs/assets/js/11.88b33277.js"><link rel="prefetch" href="/docs/assets/js/12.d888dad3.js"><link rel="prefetch" href="/docs/assets/js/13.f4b320f4.js"><link rel="prefetch" href="/docs/assets/js/14.affc25d2.js"><link rel="prefetch" href="/docs/assets/js/15.f3f21810.js"><link rel="prefetch" href="/docs/assets/js/16.20cfbcd3.js"><link rel="prefetch" href="/docs/assets/js/17.8fa60e8f.js"><link rel="prefetch" href="/docs/assets/js/18.220db854.js"><link rel="prefetch" href="/docs/assets/js/19.c6db72e7.js"><link rel="prefetch" href="/docs/assets/js/20.121df49a.js"><link rel="prefetch" href="/docs/assets/js/21.b9b44369.js"><link rel="prefetch" href="/docs/assets/js/22.a7d81dee.js"><link rel="prefetch" href="/docs/assets/js/23.05a4db07.js"><link rel="prefetch" href="/docs/assets/js/24.0e35ee22.js"><link rel="prefetch" href="/docs/assets/js/25.9c3e07da.js"><link rel="prefetch" href="/docs/assets/js/26.6dcfef0f.js"><link rel="prefetch" href="/docs/assets/js/27.6ad8c329.js"><link rel="prefetch" href="/docs/assets/js/28.6b5d3991.js"><link rel="prefetch" href="/docs/assets/js/29.407c6de9.js"><link rel="prefetch" href="/docs/assets/js/3.3ddcfe9a.js"><link rel="prefetch" href="/docs/assets/js/30.34551e96.js"><link rel="prefetch" href="/docs/assets/js/31.47783344.js"><link rel="prefetch" href="/docs/assets/js/32.c6f4cea4.js"><link rel="prefetch" href="/docs/assets/js/33.03d5e501.js"><link rel="prefetch" href="/docs/assets/js/34.0ca4e267.js"><link rel="prefetch" href="/docs/assets/js/35.e999eeee.js"><link rel="prefetch" href="/docs/assets/js/36.544af633.js"><link rel="prefetch" href="/docs/assets/js/37.9e0cc013.js"><link rel="prefetch" href="/docs/assets/js/38.1c3df97c.js"><link rel="prefetch" href="/docs/assets/js/39.9ce8a5f7.js"><link rel="prefetch" href="/docs/assets/js/4.72d66176.js"><link rel="prefetch" href="/docs/assets/js/40.323e7e25.js"><link rel="prefetch" href="/docs/assets/js/41.9440b8ee.js"><link rel="prefetch" href="/docs/assets/js/42.959d789d.js"><link rel="prefetch" href="/docs/assets/js/43.1a427e6d.js"><link rel="prefetch" href="/docs/assets/js/44.9adaa5b6.js"><link rel="prefetch" href="/docs/assets/js/45.b70993ab.js"><link rel="prefetch" href="/docs/assets/js/46.bc570f17.js"><link rel="prefetch" href="/docs/assets/js/47.954dd27f.js"><link rel="prefetch" href="/docs/assets/js/48.72d2a29d.js"><link rel="prefetch" href="/docs/assets/js/49.7ddfd074.js"><link rel="prefetch" href="/docs/assets/js/5.5087e4f8.js"><link rel="prefetch" href="/docs/assets/js/50.2684a6e6.js"><link rel="prefetch" href="/docs/assets/js/51.00572c60.js"><link rel="prefetch" href="/docs/assets/js/52.5a70be73.js"><link rel="prefetch" href="/docs/assets/js/53.9f6156b6.js"><link rel="prefetch" href="/docs/assets/js/54.9efed889.js"><link rel="prefetch" href="/docs/assets/js/55.78300585.js"><link rel="prefetch" href="/docs/assets/js/56.e33be804.js"><link rel="prefetch" href="/docs/assets/js/57.0c404d88.js"><link rel="prefetch" href="/docs/assets/js/58.2f99406b.js"><link rel="prefetch" href="/docs/assets/js/59.b7a3347e.js"><link rel="prefetch" href="/docs/assets/js/6.7a9273f7.js"><link rel="prefetch" href="/docs/assets/js/60.f14f3fe9.js"><link rel="prefetch" href="/docs/assets/js/61.f770fcc5.js"><link rel="prefetch" href="/docs/assets/js/62.9a22eb9a.js"><link rel="prefetch" href="/docs/assets/js/63.94b2ea39.js"><link rel="prefetch" href="/docs/assets/js/64.e2bf811b.js"><link rel="prefetch" href="/docs/assets/js/65.74d494f9.js"><link rel="prefetch" href="/docs/assets/js/66.a375bb32.js"><link rel="prefetch" href="/docs/assets/js/67.3c201101.js"><link rel="prefetch" href="/docs/assets/js/68.f2c6c1f4.js"><link rel="prefetch" href="/docs/assets/js/69.268faa44.js"><link rel="prefetch" href="/docs/assets/js/7.1a3a696f.js"><link rel="prefetch" href="/docs/assets/js/70.6f4df6a6.js"><link rel="prefetch" href="/docs/assets/js/71.37964dc5.js"><link rel="prefetch" href="/docs/assets/js/72.eef27e2e.js"><link rel="prefetch" href="/docs/assets/js/73.d7a9dbd9.js"><link rel="prefetch" href="/docs/assets/js/74.f2040aa6.js"><link rel="prefetch" href="/docs/assets/js/75.9f939c37.js"><link rel="prefetch" href="/docs/assets/js/77.83a2c6b3.js"><link rel="prefetch" href="/docs/assets/js/78.34149b3d.js"><link rel="prefetch" href="/docs/assets/js/79.fde21713.js"><link rel="prefetch" href="/docs/assets/js/8.9fb3aa96.js"><link rel="prefetch" href="/docs/assets/js/80.6461e24e.js"><link rel="prefetch" href="/docs/assets/js/81.e6c53d45.js"><link rel="prefetch" href="/docs/assets/js/82.19506b41.js"><link rel="prefetch" href="/docs/assets/js/83.b39f337e.js"><link rel="prefetch" href="/docs/assets/js/84.6dae4be4.js"><link rel="prefetch" href="/docs/assets/js/85.862470ad.js"><link rel="prefetch" href="/docs/assets/js/86.6121868f.js"><link rel="prefetch" href="/docs/assets/js/87.7c0c10bf.js"><link rel="prefetch" href="/docs/assets/js/88.24fd0017.js"><link rel="prefetch" href="/docs/assets/js/9.24bd0981.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.52bb2005.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><!----> <span class="site-name">我的笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/docs/javascrip/" class="nav-link">
+  JavaScrip
+</a></li><li class="dropdown-item"><!----> <a href="/docs/typescrip/" class="nav-link">
+  TypeScrip
+</a></li><li class="dropdown-item"><!----> <a href="/docs/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/docs/hook/" class="nav-link">
+  Hook
+</a></li><li class="dropdown-item"><!----> <a href="/docs/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/docs/vue3/" class="nav-link">
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/docs/webpack/" class="nav-link">
+  webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/docs/mysql/" class="nav-link">
+  Mysql
+</a></li><li class="dropdown-item"><!----> <a href="/docs/node/" class="nav-link router-link-active">
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/docs/j2ee/" class="nav-link">
+  J2EE
+</a></li><li class="dropdown-item"><!----> <a href="/docs/ssm/" class="nav-link">
+  SSM
+</a></li></ul></div></div><div class="nav-item"><a href="/docs/efficiency/1.常用网站.html" class="nav-link">
+  随记
+</a></div><div class="nav-item"><a href="/docs/collection/1.立即执行函数.html" class="nav-link">
+  收藏
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/docs/javascrip/" class="nav-link">
+  JavaScrip
+</a></li><li class="dropdown-item"><!----> <a href="/docs/typescrip/" class="nav-link">
+  TypeScrip
+</a></li><li class="dropdown-item"><!----> <a href="/docs/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/docs/hook/" class="nav-link">
+  Hook
+</a></li><li class="dropdown-item"><!----> <a href="/docs/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/docs/vue3/" class="nav-link">
+  Vue3
+</a></li><li class="dropdown-item"><!----> <a href="/docs/webpack/" class="nav-link">
+  webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/docs/mysql/" class="nav-link">
+  Mysql
+</a></li><li class="dropdown-item"><!----> <a href="/docs/node/" class="nav-link router-link-active">
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/docs/j2ee/" class="nav-link">
+  J2EE
+</a></li><li class="dropdown-item"><!----> <a href="/docs/ssm/" class="nav-link">
+  SSM
+</a></li></ul></div></div><div class="nav-item"><a href="/docs/efficiency/1.常用网站.html" class="nav-link">
+  随记
+</a></div><div class="nav-item"><a href="/docs/collection/1.立即执行函数.html" class="nav-link">
+  收藏
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/docs/node/" aria-current="page" class="sidebar-link">node基础</a></li><li><a href="/docs/node/express.html" class="sidebar-link">express</a></li><li><a href="/docs/node/mongodb.html" aria-current="page" class="active sidebar-link">mongodb</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/node/mongodb.html#数据库操作" class="sidebar-link">数据库操作</a></li><li class="sidebar-sub-header"><a href="/docs/node/mongodb.html#集合操作" class="sidebar-link">集合操作</a></li><li class="sidebar-sub-header"><a href="/docs/node/mongodb.html#文档操作" class="sidebar-link">文档操作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/node/mongodb.html#插入文档-增" class="sidebar-link">插入文档(增)</a></li><li class="sidebar-sub-header"><a href="/docs/node/mongodb.html#修改文档" class="sidebar-link">修改文档</a></li><li class="sidebar-sub-header"><a href="/docs/node/mongodb.html#删除文档" class="sidebar-link">删除文档</a></li><li class="sidebar-sub-header"><a href="/docs/node/mongodb.html#查询文档" class="sidebar-link">查询文档</a></li><li class="sidebar-sub-header"><a href="/docs/node/mongodb.html#条件查询" class="sidebar-link">条件查询</a></li></ul></li><li class="sidebar-sub-header"><a href="/docs/node/mongodb.html#limit与skip方法" class="sidebar-link">Limit与Skip方法</a></li><li class="sidebar-sub-header"><a href="/docs/node/mongodb.html#排序" class="sidebar-link">排序</a></li><li class="sidebar-sub-header"><a href="/docs/node/mongodb.html#投影" class="sidebar-link">投影</a></li></ul></li><li><a href="/docs/node/mongoose.html" class="sidebar-link">mongoose</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="数据库操作"><a href="#数据库操作" class="header-anchor">#</a> 数据库操作</h2> <p>查看版本号</p> <div class="language-sql extra-class"><pre class="language-sql"><code>mongod <span class="token comment">--version</span>
+</code></pre></div><p>连接数据库</p> <div class="language-sql extra-class"><pre class="language-sql"><code>mongo
+</code></pre></div><p>退出</p> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token keyword">exit</span>
+</code></pre></div><p>查看数据库列表</p> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token operator">&gt;</span> <span class="token keyword">show</span> dbs
+admin   <span class="token number">0.000</span>GB
+config  <span class="token number">0.000</span>GB
+<span class="token keyword">local</span>   <span class="token number">0.000</span>GB
+</code></pre></div><p>创建数据库(use命名是切换数据库，如果不存在则新建数据库)</p> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token operator">&gt;</span> <span class="token keyword">use</span> users
+</code></pre></div><p>查看当前操作的数据库</p> <div class="language- extra-class"><pre class="language-text"><code>&gt; db
+users
+</code></pre></div><p>删除数据库</p> <div class="language- extra-class"><pre class="language-text"><code>&gt; use users
+switched to db users
+&gt; db.dropDatabase()
+{ &quot;dropped&quot; : &quot;users&quot;, &quot;ok&quot; : 1 }
+</code></pre></div><h2 id="集合操作"><a href="#集合操作" class="header-anchor">#</a> 集合操作</h2> <div class="language- extra-class"><pre class="language-text"><code>&gt; db.createCollection('test')
+{ &quot;ok&quot; : 1 }
+</code></pre></div><p>查看已有集合</p> <div class="language- extra-class"><pre class="language-text"><code>&gt; show collections
+test
+</code></pre></div><p>自动创建集合,当你插入一些数据时会自动创建集合</p> <div class="language- extra-class"><pre class="language-text"><code>&gt; db.students.insertOne({&quot;name&quot;:&quot;jack&quot;})
+&gt; show collections
+students
+</code></pre></div><p>删除集合</p> <div class="language- extra-class"><pre class="language-text"><code># 创建aa集合
+&gt; db.createCollection('aa')
+{ &quot;ok&quot; : 1 }
+# 删除aa集合
+&gt; db.aa.drop()
+true
+</code></pre></div><h2 id="文档操作"><a href="#文档操作" class="header-anchor">#</a> 文档操作</h2> <p>相当于对表里的数据操作</p> <h3 id="插入文档-增"><a href="#插入文档-增" class="header-anchor">#</a> 插入文档(增)</h3> <p>向文档插入一个或多个文档</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.insert({name:'孙悟空',age:28,gender:&quot;男&quot;});
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>db.stus.insert([
+    {name:'张三',age:28,gender:&quot;男&quot;},
+    {name:'李四',age:18,gender:&quot;男&quot;}
+])
+</code></pre></div><p>插入一条数据文档</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.insertOne({name:'孙悟空',age:28,gender:&quot;男&quot;});
+</code></pre></div><p>插入多条数据</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.insertMany(
+    {name:'张三',age:28,gender:&quot;男&quot;},
+    {name:'李四',age:18,gender:&quot;男&quot;}
+)
+</code></pre></div><h3 id="修改文档"><a href="#修改文档" class="header-anchor">#</a> 修改文档</h3> <p>修改孙悟空的年龄为500</p> <p>update默认修改第一个符合条件的文档</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.update({name:'孙悟空'},{$set:{age:'500'}})
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>db.stus.updateOne({name:'孙悟空'},{$set:{age:'500'}})
+</code></pre></div><p>修改多个符合条件的文档</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.updateMany({name:'孙悟空'},{$set:{age:'500'}}) 
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>db.stus.update({name:'孙悟空'},{$set:{age:'500'}},{multi:true})
+</code></pre></div><p>删除孙悟空的年龄属性</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.update({name:&quot;孙悟空&quot;},{$unset:{age:&quot;66666&quot;}})
+</code></pre></div><h3 id="删除文档"><a href="#删除文档" class="header-anchor">#</a> 删除文档</h3> <p>删除姓名为张三的记录</p> <p>remove删除符合条件所有记录</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.remove({name:'张三'})
+</code></pre></div><p>只删除第一个</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.remove({name:'张三'},true)
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>db.stus.deleteOne({name:'张三'})
+</code></pre></div><p>删除多个</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.deleteMany({name:'张三'})
+</code></pre></div><p>清空集合</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.remove({})
+</code></pre></div><h3 id="查询文档"><a href="#查询文档" class="header-anchor">#</a> 查询文档</h3> <p>插寻所有文档</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.find()
+</code></pre></div><p>查找名字为张三的文档</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.find({name:'张三'})
+</code></pre></div><p>查找名字为张三年龄18岁的文档</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.find({name:'张三',age:'18'})
+</code></pre></div><p>查找第一个符合条件的文档</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.findOne({name:'张三'})
+</code></pre></div><p>查看文档记录数</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.find().count()
+</code></pre></div><p>查询年龄小于20岁的</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.find({age:{$lt:20}})
+</code></pre></div><p>查询年龄小于等于18岁的</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.find({age:{$lte:18}})
+</code></pre></div><p>查询年龄大于20岁的</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.find({age:{$gt:20}})
+</code></pre></div><p>查询年龄大于等于18岁的</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.find({age:{$gte:18}})
+</code></pre></div><p>查询年龄不等于20岁的</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.find({age:{$ne:20}})
+</code></pre></div><h3 id="条件查询"><a href="#条件查询" class="header-anchor">#</a> 条件查询</h3> <p>AND 条件</p> <p>MongoDB 的 find() 方法可以传入多个键(key)，每个键(key)以逗号隔开。</p> <div class="language- extra-class"><pre class="language-text"><code>db.col.find({key1:value1, key2:value2})
+</code></pre></div><p>查找名字为张三年龄18岁的文档</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.find({name:'张三',age:'18'})
+</code></pre></div><p>OR 条件</p> <p>OR 条件语句使用了关键字 $or</p> <div class="language- extra-class"><pre class="language-text"><code>db.col.find(
+   {
+      $or: [
+          {key1: value1}, {key2:value2}
+      ]
+   }
+)
+</code></pre></div><p>查找名字为张三或年龄20岁的文档</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.find({$or:[{name:'张三'},{age:20}]})
+</code></pre></div><p>AND 和 OR 联合使用</p> <div class="language- extra-class"><pre class="language-text"><code>db.col.find(
+   {
+      key3:value3,
+      $or: [
+          {key1: value1}, {key2:value2}
+      ]
+   }
+)
+</code></pre></div><h2 id="limit与skip方法"><a href="#limit与skip方法" class="header-anchor">#</a> Limit与Skip方法</h2> <p>limit()方法接受一个数字参数，该参数指定从MongoDB中读取的记录条数。</p> <p>查询age等于18岁的一条记录</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.find({age:18}).limit(1)
+</code></pre></div><p>我们除了可以使用limit()方法来读取指定数量的数据外，还可以使用skip()方法来跳过指定数量的数据。</p> <p>查询age等于18岁的一条记录，跳过第1条</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.find({age:18}).limit(1).skip(1)
+</code></pre></div><h2 id="排序"><a href="#排序" class="header-anchor">#</a> 排序</h2> <p>sort() 方法可以通过参数指定排序的字段，并使用 1 和 -1 来指定排序的方式，其中 1 为升序排列，而 -1 是用于降序排列。</p> <div class="language- extra-class"><pre class="language-text"><code>db.COLLECTION_NAME.find().sort({KEY:1})
+</code></pre></div><p>查询所有记录按id升序排序</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.find().sort({_id:1})
+</code></pre></div><h2 id="投影"><a href="#投影" class="header-anchor">#</a> 投影</h2> <p>第二参数来设置投影，id默认显示。0不显示，1显示</p> <p>查询所有只显示姓名</p> <div class="language- extra-class"><pre class="language-text"><code>db.stus.find({},{name:1,_id:0})
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/docs/node/express.html" class="prev">
+        express
+      </a></span> <span class="next"><a href="/docs/node/mongoose.html">
+        mongoose
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/docs/assets/js/app.7890f91e.js" defer></script><script src="/docs/assets/js/2.a8bc3a53.js" defer></script><script src="/docs/assets/js/76.b1358302.js" defer></script>
+  </body>
+</html>
